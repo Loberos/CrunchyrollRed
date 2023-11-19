@@ -1,0 +1,44 @@
+<!-- signup.component.html -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+<div class="register-container">
+  <div class="register-form">
+    <div class="logo">
+      <img src="assets/og-image.png" alt="Logo de la empresa">
+    </div>
+    <div class="hello">
+      <p>Se parte de la comunidad y registrate :D</p>
+    </div>
+
+    <form>
+      <div class="form-group">
+        <input type="text" id="firstName" name="firstName" [(ngModel)]="formData.first_name" required placeholder="Nombres">
+      </div>
+      <div class="form-group">
+        <input type="text" id="lastName" name="lastName" [(ngModel)]="formData.last_name" required placeholder="Apellidos">
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" name="email" [(ngModel)]="formData.email" required placeholder="Email">
+      </div>
+      <div class="form-group">
+        <input type="password" id="password" name="password" [(ngModel)]="formData.password" required placeholder="Contraseña">
+      </div>
+      <button routerLink="/login" routerLinkActive="active" class="register-button" type="submit">Sing up</button>
+
+      <div class="Or">
+        <p>Or sign up with</p>
+      </div>
+
+      <div class="social-buttons">
+        <button class="google-button"><i class="fab fa-google"></i></button>
+        <button class="facebook-button"><i class="fab fa-facebook"></i></button>
+        <button class="apple-button"><i class="fab fa-apple"></i></button>
+      </div>
+    </form>
+  </div>
+
+  <div class="image-container hide-image">
+    <img src="assets/singup.png" alt="Imagen grande">
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<!-- post-component.component.html -->
+<app-header></app-header>
+
+<div class="post-container">
+
+  <div class="post-form">
+    <h2>Nueva Publicación</h2>
+    <textarea [(ngModel)]="content" placeholder="Escribe tu publicación"></textarea>
+    <input type="text" [(ngModel)]="resource" placeholder="Enlace de imagen o video">
+    <button (click)="createPost()">Publicar</button>
+  </div>
+
+  <div class="post-list">
+    <h2>Publicaciones Recientes</h2>
+    <div *ngFor="let post of posts" class="post-item">
+      <p>{{ post.content }}</p>
+      <p>Recurso: {{ post.content }}</p>
+      <p>Recurso: {{ post.resource }}</p>
+    </div>
+
+  </div>
+</div>
+
+

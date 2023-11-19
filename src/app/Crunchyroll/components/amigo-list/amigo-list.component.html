@@ -1,0 +1,21 @@
+<app-header></app-header>
+<div class="amigo-cards">
+  <div *ngFor="let amigo of amigos" class="amigo-card">
+    <!-- Muestra la imagen de carga mientras se está descargando la imagen real -->
+    <ng-container *ngIf="!imagenesCargadas[amigo.imagen]">
+      <div class="imagen-carga"></div>
+    </ng-container>
+
+    <!-- Muestra la imagen real cuando está cargada -->
+    <ng-container *ngIf="imagenesCargadas[amigo.imagen]">
+      <img [src]="rutaImagenes + amigo.imagen" alt="{{ amigo.nombre }}" (load)="cargarImagen(amigo)"
+           width="100" height="100" style="border-radius: 50%;">
+    </ng-container>
+
+    <div class="amigo-info">
+      <h4>{{ amigo.nombre }}</h4>
+      <!-- Puedes agregar más información sobre el amigo aquí -->
+      <button >Ver perfil</button>
+    </div>
+  </div>
+</div>
