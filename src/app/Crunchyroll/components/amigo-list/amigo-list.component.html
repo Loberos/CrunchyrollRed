@@ -6,11 +6,7 @@
       <div class="imagen-carga"></div>
     </ng-container>
 
-    <!-- Muestra la imagen real cuando está cargada -->
-    <ng-container *ngIf="imagenesCargadas[amigo.imagen]">
-      <img [src]="rutaImagenes + amigo.imagen" alt="{{ amigo.nombre }}" (load)="cargarImagen(amigo)"
-           width="100" height="100" style="border-radius: 50%;">
-    </ng-container>
+    <img [src]="amigo.imagen" alt="{{ amigo.nombre }}" width="200" height="200" style="border-radius: 50%;" (load)="cargarImagen(amigo)">
 
     <div class="amigo-info">
       <h4>{{ amigo.nombre }}</h4>

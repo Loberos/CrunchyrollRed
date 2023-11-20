@@ -3,19 +3,32 @@
 
 <div class="post-container">
 
-  <div class="post-form">
-    <h2>Nueva Publicación</h2>
-    <textarea [(ngModel)]="content" placeholder="Escribe tu publicación"></textarea>
-    <input type="text" [(ngModel)]="resource" placeholder="Enlace de imagen o video">
-    <button (click)="createPost()">Publicar</button>
-  </div>
+  <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <div class="form-group">
+      <textarea  type="text" id="firstName" name="firstName" [(ngModel)]="formData.content" required placeholder="Contenido"></textarea>
+    </div>
+    <div class="file-upload-container">
+      <div class="form-group">
+        <!-- Input de tipo archivo oculto -->
+        <input type="file" id="Resource" name="Resource" accept="image/video*" required (change)="onFileChange($event)" class="input-file" />
+
+        <!-- Botón de carga personalizado -->
+        <label for="Resource" class="custom-file-upload">
+          Cargar Archivo
+        </label>
+      </div>
+    </div>
+
+    <button class="post-button" type="submit">Publicar</button>
+  </form>
 
   <div class="post-list">
     <h2>Publicaciones Recientes</h2>
     <div *ngFor="let post of posts" class="post-item">
       <p>{{ post.content }}</p>
-      <p>Recurso: {{ post.content }}</p>
-      <p>Recurso: {{ post.resource }}</p>
+      <img class="post-image" src="{{ post.urlResource }}" alt="Imagen">
+      <p>Fecha publicacion: {{ post.createdAt }}</p>
+
     </div>
 
   </div>

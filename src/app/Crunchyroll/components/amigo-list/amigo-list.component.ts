@@ -7,28 +7,20 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AmigoListComponent implements OnInit {
   amigos = [
-    { id: 1, nombre: 'Amigo 1', imagen: 'amigo1.jpg' },
-    { id: 2, nombre: 'Amigo 2', imagen: 'amigo2.jpg' },
-    { id: 3, nombre: 'Amigo 3', imagen: 'amigo3.jpg' },
-    { id: 3, nombre: 'Amigo 3', imagen: 'amigo3.jpg' },
-    { id: 3, nombre: 'Amigo 3', imagen: 'amigo3.jpg' },
-    { id: 3, nombre: 'Amigo 3', imagen: 'amigo3.jpg' },
-    { id: 3, nombre: 'Amigo 3', imagen: 'amigo3.jpg' },
-    { id: 3, nombre: 'Amigo 3', imagen: 'amigo3.jpg' },
-    { id: 3, nombre: 'Amigo 3', imagen: 'amigo3.jpg' },
-    { id: 3, nombre: 'Amigo 3', imagen: 'amigo3.jpg' },
-    { id: 3, nombre: 'Amigo 3', imagen: 'amigo3.jpg' },
-    { id: 3, nombre: 'Amigo 3', imagen: 'amigo3.jpg' },
-    { id: 3, nombre: 'Amigo 3', imagen: 'amigo3.jpg' },
-    { id: 3, nombre: 'Amigo 3', imagen: 'amigo3.jpg' },
-    { id: 3, nombre: 'Amigo 3', imagen: 'amigo3.jpg' },
-    { id: 3, nombre: 'Amigo 3', imagen: 'amigo3.jpg' },
-    { id: 3, nombre: 'Amigo 3', imagen: 'amigo3.jpg' },
-    { id: 3, nombre: 'Amigo 3', imagen: 'amigo3.jpg' },
+    { id: 1, nombre: 'John Doe', imagen: 'assets/friend.png' },
+    { id: 2, nombre: 'Jane Smith', imagen: 'assets/friend.png' },
+    { id: 3, nombre: 'Bob Johnson', imagen: 'assets/friend.png' },
+    { id: 4, nombre: 'Alice Williams', imagen: 'assets/friend.png' },
+    { id: 5, nombre: 'Charlie Brown', imagen: 'assets/friend.png' },
+    { id: 6, nombre: 'Eva Davis', imagen: 'assets/friend.png' },
+    { id: 7, nombre: 'Frank Miller', imagen: 'assets/friend.png' },
+    { id: 8, nombre: 'Grace Wilson', imagen: 'assets/friend.png' },
+    { id: 9, nombre: 'Henry Jones', imagen: 'assets/friend.png' }
+
     // Agrega más amigos según sea necesario
   ];
 
-  rutaImagenes = 'assets/amigos/';
+
 
   // Nueva propiedad para realizar un seguimiento del estado de carga de las imágenes
   imagenesCargadas: { [key: string]: boolean } = {};

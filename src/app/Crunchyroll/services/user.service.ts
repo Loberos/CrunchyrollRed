@@ -14,7 +14,7 @@ export class UserService {
     const body = { email, password };
     return this.http.post(`${this.apiUrl}/login`, body);
   }
-  signUp(user: any): Observable<any> {
+  registerUser(user: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/register`, user);
   }
 

@@ -7,22 +7,44 @@ import {Post} from "../../model/Post";
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent implements OnInit {
-  content: string="";
-  resource: string="";
-  userId: string="";
+export class PostComponent implements OnInit{
+
+  formData = {
+    content: '',
+    Resource: null as File | null,
+  };
   posts: Post[] = [];
-  showSidebars: boolean = true;
+
+  onFileChange(event: any) {
+    const file = (event.target as HTMLInputElement).files?.[0];
+    if (file) {
+      this.formData.Resource = file;
+    }
+  }
 
   constructor(private postService: PostService) {}
 
-  ngOnInit() {
+  onSubmit() {
+    const formData = new FormData();
+
+    Object.keys(this.formData).forEach(key => {
+      // @ts-ignore
+      formData.append(key, this.formData[key]);
+    });
+
+    this.createPost(formData);
+
+  }
+  ngOnInit(){
+
     this.getAndShowPosts();
   }
 
-  createPost() {
-    this.postService.createPost(this.content, this.resource, this.userId).subscribe(
+
+  createPost(request:any) {
+    this.postService.createPost(request).subscribe(
       (response) => {
+
         console.log('Publicación creada:', response);
         this.getAndShowPosts();
       },
@@ -47,8 +69,5 @@ export class PostComponent implements OnInit {
     );
   }
 
-  toggleSidebars() {
-    this.showSidebars = !this.showSidebars;
-  }
 }
 

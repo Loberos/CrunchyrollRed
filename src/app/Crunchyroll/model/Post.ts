@@ -4,4 +4,6 @@ export interface Post {
   content: string;
   resource: string;
   userId: string;
+  createdAt: Date;
+  urlResource: string;
 }

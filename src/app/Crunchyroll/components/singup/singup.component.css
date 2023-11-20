@@ -134,3 +134,37 @@ input::placeholder {
   }
 }
 
+/* Estilo para el contenedor principal del formulario de carga de archivos */
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Estilo para el contenedor del formulario de carga de archivos */
+.form-group {
+  margin-bottom: 15px; /* Agrega un margen en la parte inferior del contenedor */
+}
+
+/* Estilo para el input de tipo archivo */
+.input-file {
+  display: none; /* Oculta el input de tipo archivo predeterminado */
+}
+
+/* Estilo para el contenedor del botón de carga personalizado */
+.custom-file-upload {
+  display: inline-block;
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #4caf50; /* Color de fondo verde, puedes personalizarlo */
+  color: #fff; /* Color del texto blanco, puedes personalizarlo */
+  border-radius: 4px;
+  width: 200px; /* Ajusta el ancho del botón según tus necesidades */
+}
+
+/* Estilo para el texto del botón de carga personalizado */
+.custom-file-upload:hover {
+  background-color: #45a049; /* Cambia el color de fondo al pasar el ratón sobre él */
+}

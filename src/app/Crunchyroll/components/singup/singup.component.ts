@@ -25,7 +25,7 @@ export class SingupComponent {
       formData.append(key, this.formData[key]);
     });
 
-    this.signUp();
+    this.signUp(formData);
 
   }
 
@@ -38,8 +38,8 @@ export class SingupComponent {
 
   constructor(private authService: UserService, private router: Router) {}
 
-  signUp() {
-    this.authService.signUp(this.formData).subscribe(
+  signUp(request:any) {
+    this.authService.registerUser(request).subscribe(
       (response: any) => {
         console.log('User registered successfully', response);
         this.router.navigate(['/login']);

@@ -3,22 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {RouterOutlet} from "@angular/router";
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
 import { LoginFormComponent } from './Crunchyroll/components/login-form/login-form.component';
 
 import { FooterComponent } from './public/pages/footer/footer.component';
 import { HeaderComponent } from './public/pages/header/header.component';
 
 import {AppRoutingModule} from "./app-routing.module";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HomeComponent } from './Crunchyroll/pages/home/home.component';
 import { AmigoListComponent } from './Crunchyroll/components/amigo-list/amigo-list.component';
 import { PostComponent } from './Crunchyroll/components/post/post.component';
 import { SingupComponent } from './Crunchyroll/components/singup/singup.component';
-import { NotificationComponent } from './Crunchyroll/components/notification/notification.component';
 import { ProfileComponent } from './Crunchyroll/components/profile/profile.component';
-import {UserService} from "./Crunchyroll/services/user.service";
-import {PostService} from "./Crunchyroll/services/post.service";
+
 
 @NgModule({
   declarations: [
@@ -30,17 +28,18 @@ import {PostService} from "./Crunchyroll/services/post.service";
     AmigoListComponent,
     PostComponent,
     SingupComponent,
-    NotificationComponent,
-    ProfileComponent
+    ProfileComponent,
+
   ],
   imports: [
     BrowserModule,
     RouterOutlet,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [UserService, PostService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

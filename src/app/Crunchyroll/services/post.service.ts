@@ -12,14 +12,12 @@ export class PostService {
 
   constructor(private http: HttpClient, private authService: UserService) {}
 
-  createPost(content: string, resource: string, userId: string): Observable<any> {
-
-    const body: Post = { content, resource, userId };
-    return this.http.post(`${this.apiUrl}`, body);
+  createPost(request:any): Observable<any> {
+    return this.http.post(`${this.apiUrl}`, request);
   }
 
-  getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(`${this.apiUrl}`);
+  getPosts(): Observable<any> {
+    return this.http.get(`${this.apiUrl}`);
   }
 }
 

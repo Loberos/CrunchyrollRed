@@ -1,5 +1,3 @@
-<!-- signup.component.html -->
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
 <div class="register-container">
@@ -11,7 +9,7 @@
       <p>Se parte de la comunidad y registrate :D</p>
     </div>
 
-    <form>
+    <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
       <div class="form-group">
         <input type="text" id="firstName" name="firstName" [(ngModel)]="formData.first_name" required placeholder="Nombres">
       </div>
@@ -24,7 +22,20 @@
       <div class="form-group">
         <input type="password" id="password" name="password" [(ngModel)]="formData.password" required placeholder="Contraseña">
       </div>
-      <button routerLink="/login" routerLinkActive="active" class="register-button" type="submit">Sing up</button>
+
+      <div class="file-upload-container">
+        <div class="form-group">
+          <!-- Input de tipo archivo oculto -->
+          <input type="file" id="Resource" name="Resource" accept="image/video*" required (change)="onFileChange($event)" class="input-file" />
+
+          <!-- Botón de carga personalizado -->
+          <label for="Resource" class="custom-file-upload">
+            Cargar Avatar
+          </label>
+        </div>
+      </div>
+
+      <button routerLinkActive="active" class="register-button" type="submit">Sing up</button>
 
       <div class="Or">
         <p>Or sign up with</p>
