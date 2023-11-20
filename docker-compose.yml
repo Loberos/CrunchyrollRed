@@ -1,0 +1,17 @@
+version: '3'
+services:
+  build:
+    image: node:latest
+    volumes:
+      - ./CrunchyrollFront:/app
+    working_dir: /app
+    command: npm install && npm run build
+
+  apache:
+    image: httpd:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./CrunchyrollFront/dist:/usr/local/apache2/htdocs
+    depends_on:
+      - build
