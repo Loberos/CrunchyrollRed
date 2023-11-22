@@ -2,7 +2,7 @@
 
 export interface Post {
   content: string;
-  resource: string;
+  Resource: string;
   userId: string;
   createdAt: Date;
   urlResource: string;

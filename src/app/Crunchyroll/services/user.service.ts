@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {basePath} from "../../../BasePath";
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  private apiUrl = 'http://172.208.17.3:3000/user';
+  endpoint: string = "/user";
+  apiUrl = `${basePath}${this.endpoint}` // Reemplaza con la URL de tu API
 
   constructor(private http: HttpClient) {}
 
@@ -17,5 +19,10 @@ export class UserService {
   registerUser(user: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/register`, user);
   }
-
+    getUserById(userId: string): Observable<any> {
+        return this.http.get(`${basePath}/user-profiles/${userId}`);
+    }
+    getNotificationsById(userId:string): Observable<any> {
+        return this.http.get(`${basePath}/notifications/${userId}`);
+    }
 }

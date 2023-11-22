@@ -2,11 +2,11 @@
 
 .post-container {
   max-width: 800px;
-  margin: 20px auto 20px; /* Ajusta el valor superior según sea necesario */
+  margin: 20px auto;
   padding: 20px;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
@@ -14,40 +14,9 @@
 }
 
 .post-item {
-  /* Otros estilos para el contenedor del post */
-  text-align: center; /* Centra el contenido del contenedor */
-}
-
-.post-image {
-  max-width: 50%;
-  height: auto;
-  display: inline-block; /* Permite aplicar márgenes y centrar */
-  margin: 10px auto; /* Margen superior e inferior de 10px, centrado horizontalmente */
-  /* Otros estilos si es necesario */
-}
-
-#firstName,
-#avatar {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 10px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-#avatar {
-  cursor: pointer;
-}
-
-.post-list {
-  margin-top: 20px;
-}
-
-.post-item {
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 20px;
   margin-bottom: 20px;
   transition: box-shadow 0.3s;
@@ -57,16 +26,60 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.post-item p {
-  margin: 8px 0;
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-name {
+  font-weight: bold;
+  color: #F47521; /* Naranja */
+}
+
+.post-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-actions {
+  margin-top: 10px;
+}
+
+.comment-section {
+  margin-top: 20px;
+}
+
+.comment {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+}
+
+.comment-date {
+  color: #555;
+  font-size: 0.9em;
 }
 
 .post-button {
   display: block;
   margin: auto;
-  background-color: #F47521;
+  background-color: #F47521; /* Naranja */
   color: #fff;
-  padding: 12px 20px;
+  padding: 15px 30px;
   border: none;
   border-radius: 24px;
   cursor: pointer;
@@ -74,38 +87,256 @@
   transition: background-color 0.3s;
 }
 
-/* Estilo para el contenedor principal del formulario de carga de archivos */
+.post-button:hover {
+  background-color: #d95e15; /* Naranja más oscuro al pasar el mouse */
+}
+
 .file-upload-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  border: 2px dashed #F47521; /* Borde punteado naranja */
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
 }
 
-/* Estilo para el contenedor del formulario de carga de archivos */
-.form-group {
-  margin-bottom: 15px; /* Agrega un margen en la parte inferior del contenedor */
+.custom-file-upload {
+  display: inline-block;
+  padding: 15px 30px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 12px;
 }
 
-/* Estilo para el input de tipo archivo */
+.custom-file-upload:hover {
+  background-color: #45a049;
+}
+
+.uploaded-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.interactions:hover{
+  color: #00BDD6;
+}
+/* post.component.css */
+/* ... Otros estilos ... */
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.custom-file-upload {
+  /* Estilo para el botón de carga personalizado */
+  display: inline-block;
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 4px;
+  width: 200px;
+}
+
+/* ... Otros estilos ... */
+/* post.component.css */
+/* ... Otros estilos ... */
+
+.comment-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.comment {
+  /* Estilo para cada comentario */
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.comment p {
+  margin: 8px 0;
+}
+
+.comment-date {
+  font-size: 12px;
+  color: #888;
+}
+
 .input-file {
   display: none; /* Oculta el input de tipo archivo predeterminado */
 }
 
-/* Estilo para el contenedor del botón de carga personalizado */
 .custom-file-upload {
+  /* Estilo para el contenedor del botón de carga personalizado */
   display: inline-block;
   padding: 8px 12px;
   cursor: pointer;
   background-color: #4caf50; /* Color de fondo verde, puedes personalizarlo */
   color: #fff; /* Color del texto blanco, puedes personalizarlo */
   border-radius: 4px;
-  width: 200px; /* Ajusta el ancho del botón según tus necesidades */
+  /* Ajusta el ancho del botón según tus necesidades */
+  width: 200px;
+  text-align: center;
 }
 
-/* Estilo para el texto del botón de carga personalizado */
 .custom-file-upload:hover {
   background-color: #45a049; /* Cambia el color de fondo al pasar el ratón sobre él */
 }
+/* Estilos para el textarea de la publicación */
+.post-textarea {
+  width: 100%;
+  min-height: 80px;
+  font-size: 16px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: none;
+}
 
+/* Estilos para el textarea de los comentarios */
+.comment-textarea {
+  width: 100%;
+}
+
+.comment-textarea textarea {
+  font-size: 14px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+/* Estilo para los botones de publicación y comentarios */
+.post-button, .comment-button {
+  background-color: #1877f2; /* Color de Facebook */
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.post-button:hover, .comment-button:hover {
+  background-color: #1468e2; /* Color de Facebook en hover */
+}
+
+/* Estilo para la sección de publicaciones */
+.post-list {
+  width: 100%;
+  max-width: 600px; /* Ajusta el ancho máximo según tus necesidades */
+  margin: 0 auto;
+}
+
+/* Estilo para los elementos individuales de la publicación */
+.post-item {
+  margin-bottom: 20px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Estilo para la sección de comentarios */
+.comment-section {
+  margin-top: 16px;
+}
+
+/* Otros estilos para mejorar la apariencia */
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+/* Estilos para el listado de comentarios */
+.comment-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comment-item {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.profile-pic {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+/* Agrega más estilos según sea necesario */

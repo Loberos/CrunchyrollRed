@@ -14,8 +14,10 @@ export class SingupComponent {
     password: '',
     first_name: '',
     last_name: '',
-    avatar: null as File | null
+    avatar: null as File | null,
+    imageSrc: null as string | null,
   };
+  selectedFile: File | null = null; // Almacena la imagen seleccionada
 
   onSubmit() {
     const formData = new FormData();
@@ -33,6 +35,12 @@ export class SingupComponent {
     const file = (event.target as HTMLInputElement).files?.[0];
     if (file) {
       this.formData.avatar = file;
+
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.formData.imageSrc = e.target.result; // Guarda la imagen en formData o en la propiedad que prefieras
+      };
+      reader.readAsDataURL(file);
     }
   }
 
@@ -42,9 +50,11 @@ export class SingupComponent {
     this.authService.registerUser(request).subscribe(
       (response: any) => {
         console.log('User registered successfully', response);
+        alert('User registered successfully');
         this.router.navigate(['/login']);
       },
       (error) => {
+        alert('Error during registration');
         console.error('Error during registration', error);
       }
     );

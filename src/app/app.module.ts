@@ -16,8 +16,16 @@ import { AmigoListComponent } from './Crunchyroll/components/amigo-list/amigo-li
 import { PostComponent } from './Crunchyroll/components/post/post.component';
 import { SingupComponent } from './Crunchyroll/components/singup/singup.component';
 import { ProfileComponent } from './Crunchyroll/components/profile/profile.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
 
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
 
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatMenuModule } from '@angular/material/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +45,14 @@ import { ProfileComponent } from './Crunchyroll/components/profile/profile.compo
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    MatBadgeModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

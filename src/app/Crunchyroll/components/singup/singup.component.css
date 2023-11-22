@@ -168,3 +168,34 @@ input::placeholder {
 .custom-file-upload:hover {
   background-color: #45a049; /* Cambia el color de fondo al pasar el ratón sobre él */
 }
+
+/* tu-componente.component.css */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 10px;
+  border-radius: 8px; /* Añade esquinas redondeadas */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra suave */
+}
+
+.file-upload-container {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.custom-file-upload {
+  background-color: #1877f2; /* Color de fondo similar a Facebook */
+  color: #fff; /* Color del texto */
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.custom-file-upload:hover {
+  background-color: #155a9e; /* Cambia el color de fondo al pasar el mouse */
+}

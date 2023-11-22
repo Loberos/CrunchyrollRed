@@ -18,11 +18,18 @@ export class LoginFormComponent {
 
   login() {
     this.authService.authenticate(this.email, this.password).subscribe(
-      (response) => {
+      (response:any) => {
+
         console.log('Login exitoso', response);
         this.router.navigate(['/home']);
+        if (response.user_id) {
+          localStorage.setItem('user_id', response.user_id);
+        } else {
+          console.error('El user_id en la respuesta es nulo o indefinido.');
+        }
       },
       (error) => {
+        alert('Error de inicio de sesión');
         console.error('Error de inicio de sesión', error);
       }
     );
